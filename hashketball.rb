@@ -1,4 +1,5 @@
 # Write your code here!
+require "pry"
 def game_hash
   {
     home: {
@@ -184,8 +185,23 @@ end
   
 
 
+def players 
+  number= []
+  array = game_hash.map {|key, value|
+    value[:players]
+  }
+  array.each do |hash|
+    hash.each do |player, stats|
+      number.push(stats[:number])
+    end
+  end
+  
+  binding.pry
+  
+end
 
 
+players
 
 
 
